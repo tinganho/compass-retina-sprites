@@ -1,18 +1,5 @@
-*.gem
-*.rbc
-.bundle
-.config
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
+// Sublime Text 2 cache
+.DS_Store
 
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
+// Sass cache
+example/.sass-cache
