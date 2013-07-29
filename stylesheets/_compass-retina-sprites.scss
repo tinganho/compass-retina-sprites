@@ -18,7 +18,7 @@
     ( -webkit-min-device-pixel-ratio: 1.5 ),
     ( min--moz-device-pixel-ratio: 3/2 ),
     ( min-resolution: 1.5dppx ),
-    ( min-resolution: 19dpi ) {
+    ( min-resolution: 192dpi ) {
       background-position: 0 round( nth( sprite-position( $map2x, $name ), 2) / 2);
       height: round( image-height( sprite-file( $map2x, $name ) ) / 2 );
       width: round( image-width( sprite-file( $map2x, $name ) ) /2 );
