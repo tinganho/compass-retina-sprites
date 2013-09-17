@@ -71,6 +71,17 @@ $hover-class        : 'sp-hover';
       ( min-resolution: 192dpi ) {
         background  : $sprite-ret;
     }
+    .webpalpha & {
+      background : url(str-replace(sprite-url($sprite), '.png', '.webp'));
+        @media (
+        -webkit-min-device-pixel-ratio: 1.5 ),
+        ( min--moz-device-pixel-ratio: 3/2 ),
+        ( min-resolution: 1.5dppx ),
+        ( min-resolution: 192dpi ) {
+          background : url(str-replace(sprite-url($sprite), '.png', '.webp'));
+      }
+    }
+
   }
 
   @each $sprite-image in sprite_names( $sprite ) {
