@@ -61,27 +61,32 @@ $hover-class        : 'sp-hover';
 
   $sprite         : sprite-map( "#{$sprite-name}/*.png" );
   $sprite-ret     : sprite-map( "#{$sprite-name}2x/*.png" );
+  $webp           : str-replace(sprite-url($sprite), '.png', '.webp');
+  $webp-url       : str-replace($webp, 'images', 'images-webp');
+  $webp-ret       : str-replace(sprite-url($sprite-ret), '.png', '.webp');
+  $webp-url-ret   : str-replace($webp-ret, 'images', 'images-webp');
 
   .sp-#{$sprite-name} {
-    background : $sprite;
-    @media (
-      -webkit-min-device-pixel-ratio: 1.5 ),
-      ( min--moz-device-pixel-ratio: 3/2 ),
-      ( min-resolution: 1.5dppx ),
-      ( min-resolution: 192dpi ) {
-        background  : $sprite-ret;
+    .no-webpalpha & {
+      background : $sprite;
+      @media (
+        -webkit-min-device-pixel-ratio: 1.5 ),
+        ( min--moz-device-pixel-ratio: 3/2 ),
+        ( min-resolution: 1.5dppx ),
+        ( min-resolution: 192dpi ) {
+          background  : $sprite-ret;
+      }
     }
     .webpalpha & {
-      background : url(str-replace(sprite-url($sprite), '.png', '.webp'));
+      background : url($webp-url) no-repeat;
         @media (
         -webkit-min-device-pixel-ratio: 1.5 ),
         ( min--moz-device-pixel-ratio: 3/2 ),
         ( min-resolution: 1.5dppx ),
         ( min-resolution: 192dpi ) {
-          background : url(str-replace(sprite-url($sprite), '.png', '.webp'));
+          background : url($webp-url-ret) no-repeat;
       }
     }
-
   }
 
   @each $sprite-image in sprite_names( $sprite ) {
