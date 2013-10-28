@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
 
   # Release Specific Information
   s.name = "compass-retina-sprites"
-  s.version = "0.1.4"
+  s.version = "0.1.7"
   s.date = "2012-09-15"
 
   # Author Information

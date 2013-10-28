@@ -12,17 +12,17 @@
   display: inline-block;
   height: image-height( sprite-file( $map, $name ) );
   width: image-width( sprite-file( $map, $name ) );
-  background-position: sprite-position( $map, $name );
+  background-position: sprite-position( $map, $name ) !important;
 
   @media
     ( -webkit-min-device-pixel-ratio: 1.5 ),
     ( min--moz-device-pixel-ratio: 3/2 ),
     ( min-resolution: 1.5dppx ),
     ( min-resolution: 192dpi ) {
-      background-position: 0 round( nth( sprite-position( $map2x, $name ), 2) / 2);
+      background-position: 0 round( nth( sprite-position( $map2x, $name ), 2) / 2) !important;
       height: round( image-height( sprite-file( $map2x, $name ) ) / 2 );
       width: round( image-width( sprite-file( $map2x, $name ) ) /2 );
-      background-size: ceil( image-width( sprite-path( $map2x ) ) / 2) auto;
+      background-size: ceil( image-width( sprite-path( $map2x ) ) / 2) auto !important;
   }
 }
 // Icon sprites are stored in i tags when possible
@@ -30,7 +30,6 @@
 i {
   display : inline-block;
   vertical-align  : middle;
-  margin-top : -4px; // Hack to properly align text
 }
 
 
@@ -78,13 +77,13 @@ $hover-class        : 'sp-hover';
       }
     }
     .webpalpha & {
-      background : url($webp-url) no-repeat;
+      background : $webp-url no-repeat;
         @media (
         -webkit-min-device-pixel-ratio: 1.5 ),
         ( min--moz-device-pixel-ratio: 3/2 ),
         ( min-resolution: 1.5dppx ),
         ( min-resolution: 192dpi ) {
-          background : url($webp-url-ret) no-repeat;
+          background : $webp-url-ret no-repeat;
       }
     }
   }
